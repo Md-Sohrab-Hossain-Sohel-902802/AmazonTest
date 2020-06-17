@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchProductActivity">
+
+
+
+    <RelativeLayout
+        android:id="@+id/firstRelativeLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimaryDark"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        >
+
+
+       <EditText
+           android:layout_width="260dp"
+           android:layout_height="wrap_content"
+           android:hint="Product Name"
+           android:textColorHint="@color/colorPrimaryDark"
+           android:id="@+id/search_product_name"
+           android:textColor="@color/colorPrimaryDark"
+           android:textSize="18sp"
+           android:textStyle="bold"
+           android:background="@android:color/white"
+           android:padding="9dp"
+           android:layout_marginStart="5dp"
+           android:layout_centerVertical="true"
+
+           />
+
+
+    <Button
+        android:id="@+id/searchbuttonId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/search_product_name"
+        android:text="Search"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+            android:background="@color/colorPrimaryDark"
+        android:padding="9dp"
+        android:layout_marginLeft="8dp"
+        android:layout_centerInParent="true"
+        />
+
+
+
+
+
+    </RelativeLayout>
+
+
+
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/search_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/firstRelativeLayout3"
+    />
+
+
+
+
+</RelativeLayout>

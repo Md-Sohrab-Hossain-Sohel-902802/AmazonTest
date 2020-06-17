@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".AdminMaintainProductActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+        <ImageView
+            android:id="@+id/product_image_maintain"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+          android:scaleType="centerCrop"
+            android:layout_marginTop="2dp"
+
+            />
+
+
+
+        <EditText
+            android:id="@+id/product_price_maintain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Product  Price"
+            android:layout_marginTop="2dp"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:layout_below="@+id/product_image_maintain"
+            android:textColor="@color/colorPrimaryDark"
+            android:background="@drawable/input_design"
+            android:padding="15dp"
+            />
+        <EditText
+            android:id="@+id/product_description_maintain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Product  Description"
+            android:background="@drawable/input_design"
+            android:padding="15dp"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:layout_below="@+id/product_price_maintain"
+            android:textColor="@color/colorPrimaryDark"
+
+            />
+        <EditText
+            android:id="@+id/product_name_maintain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Product  Name"
+            android:background="@drawable/input_design"
+            android:padding="15dp"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:layout_below="@+id/product_description_maintain"
+            android:textColor="@color/colorPrimaryDark"
+
+            />
+
+        <Button
+            android:id="@+id/applychangesbuttonId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_below="@+id/product_name_maintain"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/buttons"
+            android:text="Apply Changes"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            />
+
+
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>
