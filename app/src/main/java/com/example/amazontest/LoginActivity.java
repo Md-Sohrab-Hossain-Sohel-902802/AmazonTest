@@ -7,12 +7,14 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.amazontest.Admin.AdminCategoryActivity;
 import com.example.amazontest.DataModuler.Users;
 import com.example.amazontest.Prevalent.Prevalent;
 import com.google.firebase.database.DataSnapshot;
@@ -38,6 +40,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private TextView adminLink,notAdminLink;
 
+    private  TextView forgotPasswordLink;
 
 
     @Override
@@ -51,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
         loginButton=findViewById(R.id.login_login_button);
         adminLink=findViewById(R.id.admin_panel_link);
         notAdminLink=findViewById(R.id.not_admin_panel_link);
-
+        forgotPasswordLink=findViewById(R.id.forget_password_link);
 
 
 
@@ -105,7 +108,16 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
+    forgotPasswordLink.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
 
+            Intent intent=new Intent(LoginActivity.this,ResetPasswordActivity.class);
+            intent.putExtra("check","home");
+            startActivity(intent);
+
+        }
+    });
 
 
 
@@ -189,7 +201,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(LoginActivity.this, " logged in Successfully .........", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
 
-                          Intent intent=new Intent(LoginActivity.this,AdminCategoryActivity.class);
+                          Intent intent=new Intent(LoginActivity.this, AdminCategoryActivity.class);
                                 startActivity(intent);
                             }else if(parentDbname.equals("Users")){
                                 Toast.makeText(LoginActivity.this, " logged in Successfully .........", Toast.LENGTH_SHORT).show();

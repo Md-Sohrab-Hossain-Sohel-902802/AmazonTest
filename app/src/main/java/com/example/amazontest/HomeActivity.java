@@ -10,13 +10,13 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.amazontest.Admin.AdminMaintainProductActivity;
 import com.example.amazontest.DataModuler.Products;
 import com.example.amazontest.Prevalent.Prevalent;
 import com.example.amazontest.ViewHolder.ProductViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -177,7 +177,7 @@ public class HomeActivity extends AppCompatActivity  implements
                         public void onClick(View v) {
 
                             if(type.equals("Admin")){
-                                Intent intent=new Intent(HomeActivity.this,AdminMaintainProductActivity.class);
+                                Intent intent=new Intent(HomeActivity.this, AdminMaintainProductActivity.class);
                                 intent.putExtra("pid",products.getPid());
                                 startActivity(intent);
                             }else{

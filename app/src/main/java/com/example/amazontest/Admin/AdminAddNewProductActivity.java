@@ -1,4 +1,4 @@
-package com.example.amazontest;
+package com.example.amazontest.Admin;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.amazontest.Prevalent.Prevalent;
+import com.example.amazontest.R;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -266,7 +267,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
 
-                    Intent intent=new Intent(AdminAddNewProductActivity.this,AdminCategoryActivity.class);
+                    Intent intent=new Intent(AdminAddNewProductActivity.this, AdminCategoryActivity.class);
 
 
                     loadingBar.dismiss();

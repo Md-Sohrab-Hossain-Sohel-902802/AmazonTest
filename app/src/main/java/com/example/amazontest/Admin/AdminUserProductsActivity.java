@@ -1,4 +1,4 @@
-package com.example.amazontest;
+package com.example.amazontest.Admin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 
 import com.example.amazontest.DataModuler.Cart;
 import com.example.amazontest.Prevalent.Prevalent;
+import com.example.amazontest.R;
 import com.example.amazontest.ViewHolder.CartViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;

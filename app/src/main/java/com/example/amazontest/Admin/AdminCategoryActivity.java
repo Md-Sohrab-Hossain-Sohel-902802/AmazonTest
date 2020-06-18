@@ -1,4 +1,4 @@
-package com.example.amazontest;
+package com.example.amazontest.Admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import com.example.amazontest.HomeActivity;
+import com.example.amazontest.MainActivity;
+import com.example.amazontest.R;
 
 import io.paperdb.Paper;
 
@@ -73,7 +77,7 @@ public class AdminCategoryActivity extends AppCompatActivity  implements View.On
             @Override
             public void onClick(View v) {
                 Paper.book().destroy();
-                Intent intent=new Intent(AdminCategoryActivity.this,MainActivity.class);
+                Intent intent=new Intent(AdminCategoryActivity.this, MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
                 finish();
@@ -91,7 +95,7 @@ public class AdminCategoryActivity extends AppCompatActivity  implements View.On
         maintainProductButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                        Intent intent=new Intent(AdminCategoryActivity.this,HomeActivity.class);
+                        Intent intent=new Intent(AdminCategoryActivity.this, HomeActivity.class);
                         intent.putExtra("admin","Admin");
                         startActivity(intent);
             }
@@ -143,7 +147,7 @@ public class AdminCategoryActivity extends AppCompatActivity  implements View.On
 
 
     public void  gotoAddProduct(String value){
-        Intent intent=new Intent(AdminCategoryActivity.this,AdminAddNewProductActivity.class);
+        Intent intent=new Intent(AdminCategoryActivity.this, AdminAddNewProductActivity.class);
         intent.putExtra("category",value);
         startActivity(intent);
     }

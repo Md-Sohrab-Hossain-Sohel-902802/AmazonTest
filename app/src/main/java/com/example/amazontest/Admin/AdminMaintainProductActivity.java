@@ -1,17 +1,18 @@
-package com.example.amazontest;
+package com.example.amazontest.Admin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.renderscript.Sampler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.amazontest.HomeActivity;
+import com.example.amazontest.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -31,6 +32,7 @@ public class AdminMaintainProductActivity extends AppCompatActivity {
     private ImageView imageView;
 
     private  String productid;
+    private  Button deleteButton;
 
 
     @Override
@@ -46,13 +48,20 @@ public class AdminMaintainProductActivity extends AppCompatActivity {
         price=findViewById(R.id.product_price_maintain);
         description=findViewById(R.id.product_description_maintain);
         imageView=findViewById(R.id.product_image_maintain);
-
+        deleteButton=findViewById(R.id.delete_product_button);
 
 
         applyChangesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                                 updateValue();
+            }
+        });
+
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                           deleteThisProduct();     
             }
         });
 
@@ -68,6 +77,30 @@ public class AdminMaintainProductActivity extends AppCompatActivity {
 
 
 
+
+
+    }
+
+    private void deleteThisProduct() {
+
+        DatabaseReference reference= FirebaseDatabase.getInstance().getReference().child("Products");
+        reference.child(productid).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+
+                if(task.isSuccessful()){
+
+                    Toast.makeText(AdminMaintainProductActivity.this, "Product is deleted successfully.", Toast.LENGTH_SHORT).show();
+                    Intent intent=new Intent(AdminMaintainProductActivity.this, HomeActivity.class);
+                    intent.putExtra("admin","Admin");
+                    startActivity(intent);
+
+                }else{
+                    Toast.makeText(AdminMaintainProductActivity.this, "Something Error . Please Try again. "+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
 
 
 
@@ -98,6 +131,9 @@ public class AdminMaintainProductActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
+
+
+
 
             }
         });

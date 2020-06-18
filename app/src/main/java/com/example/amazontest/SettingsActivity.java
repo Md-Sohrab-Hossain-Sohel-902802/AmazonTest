@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -51,6 +52,7 @@ public class SettingsActivity extends AppCompatActivity{
     private  String myUrl="";
     private StorageReference  storageProfilePictureREf;
     private  String checker="";
+    private Button securityQuestionButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +72,7 @@ public class SettingsActivity extends AppCompatActivity{
         profileChangeTextBtn=findViewById(R.id.profile_Image_change_btn);
         closeBtn=findViewById(R.id.close_settings);
         saveTextButton=findViewById(R.id.update_account_settings);
-
+        securityQuestionButton=findViewById(R.id.sequrity_question_btn);
 
 
 
@@ -111,6 +113,17 @@ public class SettingsActivity extends AppCompatActivity{
 
 
 
+            }
+        });
+
+
+        securityQuestionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(SettingsActivity.this,ResetPasswordActivity.class);
+
+                intent.putExtra("check","settings");
+                startActivity(intent);
             }
         });
 
