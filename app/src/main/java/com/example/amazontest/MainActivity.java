@@ -1,31 +1,25 @@
 package com.example.amazontest;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.amazontest.DataModuler.Users;
 import com.example.amazontest.Prevalent.Prevalent;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import com.example.amazontest.Seller.SellerRegistrationActivity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 
 import io.paperdb.Paper;
 
@@ -36,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private Button joinNowButton,loginButton;
     private ProgressDialog loadingBar;
 
+    private TextView sellerRegistration;
 
 
 
@@ -51,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
 
         joinNowButton=findViewById(R.id.main_join_now_Button);
         loginButton=findViewById(R.id.main_login_button);
+       sellerRegistration=findViewById(R.id.sellerRegistrationLInk);
+
+
 
         loadingBar=new ProgressDialog(this);
         Paper.init(this);
@@ -59,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,LoginActivity.class);
+                Intent intent=new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
         });
@@ -68,11 +66,20 @@ public class MainActivity extends AppCompatActivity {
         joinNowButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,RegisterActivity.class);
+                Intent intent=new Intent(MainActivity.this, RegisterActivity.class);
                 startActivity(intent);
             }
         });
 
+
+
+       sellerRegistration.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    Intent intent=new Intent(MainActivity.this, SellerRegistrationActivity.class);
+                    startActivity(intent);
+            }
+        });
 
 
         String userphonekey=Paper.book().read(Prevalent.userPhonekey);
@@ -111,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
                             Toast.makeText(MainActivity.this, " logged in Successfully .........", Toast.LENGTH_SHORT).show();
                             loadingBar.dismiss();
 
-                            Intent intent=new Intent(MainActivity.this,HomeActivity.class);
+                            Intent intent=new Intent(MainActivity.this, HomeActivity.class);
                             Prevalent.currentOnlineUsers=userData;
                             startActivity(intent);
                         }else {

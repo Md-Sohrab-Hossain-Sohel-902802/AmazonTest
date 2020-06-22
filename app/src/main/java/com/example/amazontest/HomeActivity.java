@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.example.amazontest.Admin.AdminMaintainProductActivity;
 import com.example.amazontest.DataModuler.Products;
 import com.example.amazontest.Prevalent.Prevalent;
+
 import com.example.amazontest.ViewHolder.ProductViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -181,7 +182,7 @@ public class HomeActivity extends AppCompatActivity  implements
                                 intent.putExtra("pid",products.getPid());
                                 startActivity(intent);
                             }else{
-                                Intent intent=new Intent(HomeActivity.this,ProductDetailsActivity.class);
+                                Intent intent=new Intent(HomeActivity.this, ProductDetailsActivity.class);
                                 intent.putExtra("pid",products.getPid());
                                 startActivity(intent);
                             }
@@ -242,7 +243,7 @@ public class HomeActivity extends AppCompatActivity  implements
         }else if(item.getItemId()==R.id.nav_Search){
 
             if(!type.equals("Admin")){
-                Intent intent=new Intent(HomeActivity.this,SearchProductActivity.class);
+                Intent intent=new Intent(HomeActivity.this, SearchProductActivity.class);
                 startActivity(intent);
             }
 
@@ -252,7 +253,7 @@ public class HomeActivity extends AppCompatActivity  implements
             Toast.makeText(this, "Categories", Toast.LENGTH_SHORT).show();
         }else if(item.getItemId()==R.id.nav_settings){
             if(!type.equals("Admin")){
-                Intent intent=new Intent(HomeActivity.this,SettingsActivity.class);
+                Intent intent=new Intent(HomeActivity.this, SettingsActivity.class);
                 startActivity(intent);
             }
 

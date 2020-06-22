@@ -42,9 +42,7 @@
         android:id="@+id/main_login_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="10dp"
+    android:layout_marginBottom="10dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:background="@drawable/buttons"
@@ -53,13 +51,13 @@
         android:textSize="18sp"
         android:text="Allready have an Account ? Login"
         android:textColor="@android:color/white"
-
+        android:layout_above="@+id/main_join_now_Button"
         />
     <Button
         android:id="@+id/main_join_now_Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/main_login_button"
+        android:layout_above="@+id/sellerRegistrationLInk"
         android:layout_marginBottom="5dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
@@ -69,6 +67,21 @@
         android:textSize="18sp"
         android:text="Join Now"
         android:textColor="@android:color/white"
+
+        />
+
+
+    <TextView
+    android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sellerRegistrationLInk"
+        android:text="I Want To Join As  A Seller"
+        android:layout_alignParentBottom="true"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
 
         />
 
